@@ -1,0 +1,14 @@
+---
+import { site } from "../content/site";
+---
+
+<section class="section section-shell about" id="about" aria-labelledby="about-title">
+  <div class="section-heading">
+    <h2 id="about-title">{site.about.title}</h2>
+  </div>
+  <div class="about-copy">
+    <h3>{site.about.introduction}</h3>
+    {site.about.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+  </div>
+  <p class="about-fact">{site.about.fact}</p>
+</section>

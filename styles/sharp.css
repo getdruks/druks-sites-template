@@ -1,0 +1,103 @@
+body[data-style="sharp"] {
+  --primary: #11110f;
+  --surface: #efeee7;
+  --accent: #b92b1d;
+  --font-display: "Barlow Condensed Local", Arial Narrow, sans-serif;
+  --font-body: "Manrope Local", Arial, sans-serif;
+}
+
+body[data-style="sharp"] h1,
+body[data-style="sharp"] h2,
+body[data-style="sharp"] h3,
+body[data-style="sharp"] .brand,
+body[data-style="sharp"] .button,
+body[data-style="sharp"] summary {
+  text-transform: uppercase;
+}
+
+body[data-style="sharp"] h1,
+body[data-style="sharp"] h2,
+body[data-style="sharp"] h3 {
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 0.84;
+}
+
+body[data-style="sharp"] h1 {
+  max-width: 100%;
+  font-size: clamp(4.5rem, 10vw, 10rem);
+}
+
+body[data-style="sharp"] h2 {
+  font-size: clamp(3.5rem, 7vw, 7.5rem);
+}
+
+body[data-style="sharp"] .site-header,
+body[data-style="sharp"] .section {
+  border-top: 3px solid var(--primary);
+  border-bottom: 0;
+}
+
+body[data-style="sharp"] .site-header {
+  border-bottom: 3px solid var(--primary);
+}
+
+body[data-style="sharp"] .hero {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 0 1.25rem;
+}
+
+body[data-style="sharp"] .hero-media {
+  min-height: 40rem;
+  border-inline: 3px solid var(--primary);
+}
+
+body[data-style="sharp"] .button {
+  min-height: 3.35rem;
+  border: 2px solid var(--primary);
+  box-shadow: 0.35rem 0.35rem 0 var(--primary);
+  letter-spacing: 0.08em;
+}
+
+body[data-style="sharp"] .button:hover {
+  transform: translate(0.2rem, 0.2rem);
+  box-shadow: 0.15rem 0.15rem 0 var(--primary);
+}
+
+body[data-style="sharp"] .service-list li,
+body[data-style="sharp"] .hours-list div,
+body[data-style="sharp"] .faq-list details {
+  border-top-width: 2px;
+}
+
+body[data-style="sharp"] .gallery-grid {
+  gap: 0;
+  border: 3px solid var(--primary);
+}
+
+body[data-style="sharp"] .gallery-grid figure {
+  border: 2px solid var(--primary);
+}
+
+body[data-style="sharp"] .location {
+  grid-template-columns: minmax(16rem, 0.48fr) minmax(12rem, 0.42fr) minmax(0, 1fr);
+  gap: 2rem;
+}
+
+body[data-style="sharp"] .location h2 {
+  font-size: clamp(3rem, 5.6vw, 6rem);
+}
+
+body[data-style="sharp"] .credentials {
+  grid-template-columns: minmax(20rem, 0.42fr) minmax(0, 1fr);
+  gap: 3rem;
+}
+
+body[data-style="sharp"] .credentials h2 {
+  font-size: clamp(3rem, 5vw, 5rem);
+}
+
+body[data-style="sharp"] .placeholder-media figcaption {
+  border: 2px solid var(--primary);
+  text-transform: uppercase;
+}

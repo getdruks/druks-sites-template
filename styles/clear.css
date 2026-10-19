@@ -1,0 +1,46 @@
+body[data-style="clear"] {
+  --primary: #102437;
+  --surface: #f7f9fa;
+  --accent: #0b69d1;
+  --font-display: "Manrope Local", Arial, sans-serif;
+  --font-body: "Manrope Local", Arial, sans-serif;
+}
+
+body[data-style="clear"] h1,
+body[data-style="clear"] h2,
+body[data-style="clear"] h3 {
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+}
+
+body[data-style="clear"] .site-header {
+  min-height: 4.5rem;
+}
+
+body[data-style="clear"] .hero {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+body[data-style="clear"] .hero-media,
+body[data-style="clear"] .location-media {
+  border: 1px solid color-mix(in srgb, var(--primary) 22%, transparent);
+}
+
+body[data-style="clear"] .section {
+  padding-block: clamp(4.5rem, 8vw, 8rem);
+}
+
+body[data-style="clear"] .section-heading p,
+body[data-style="clear"] .service-list p,
+body[data-style="clear"] .credential-list p {
+  color: color-mix(in srgb, var(--primary) 78%, var(--surface));
+}
+
+body[data-style="clear"] .service-list li {
+  min-height: 6.5rem;
+}
+
+body[data-style="clear"] .button {
+  border-radius: 0.2rem;
+}

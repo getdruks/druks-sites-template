@@ -1,0 +1,14 @@
+{
+  "name": "druks-sites-template",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "astro build",
+    "dev": "astro dev",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "7.3.1"
+  }
+}

@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+
+import Action from "../components/Action.astro";
+import Arrow from "../components/Arrow.astro";
+import { site } from "../content/site";
+---
+
+<section class="section section-shell location" id="location" aria-labelledby="location-title">
+  <div class="section-heading">
+    <h2 id="location-title">{site.location.title}</h2>
+    <p>{site.location.introduction}</p>
+  </div>
+  <address>
+    <div>
+      <h3>{site.location.addressLabel}</h3>
+      {site.location.addressLines.map((line) => <span>{line}</span>)}
+      <Action action={site.location.directions} sectionId="location" destinationRequired>
+        <Arrow />
+      </Action>
+    </div>
+    <div id="contact">
+      <h3>{site.location.contactLabel}</h3>
+      <a href={site.location.phoneHref}>{site.location.phoneDisplay}</a>
+      <a href={`mailto:${site.location.email}`}>{site.location.email}</a>
+    </div>
+  </address>
+  <figure class="location-media placeholder-media">
+    <Image
+      src={site.location.image.src}
+      alt={site.location.image.alt}
+      widths={[360, 480, 720, 960, 1280]}
+      sizes="(max-width: 900px) calc(100vw - 2rem), 40vw"
+      format="webp"
+      loading="lazy"
+      quality={78}
+    />
+    <figcaption>{site.location.image.caption}</figcaption>
+  </figure>
+</section>

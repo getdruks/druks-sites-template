@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+
+import Action from "../components/Action.astro";
+import Arrow from "../components/Arrow.astro";
+import { site } from "../content/site";
+---
+
+<header class="site-header" aria-label={site.navigation.label}>
+  <a class="brand" href="#top">{site.shop.shortName}</a>
+  <nav class="desktop-nav" aria-label={site.navigation.sectionsLabel}>
+    {site.navigation.items.map((item) => <a href={item.href}>{item.label}</a>)}
+  </nav>
+  <Action class="button header-booking" action={site.shop.primaryAction} sectionId="top" />
+  <details class="mobile-nav">
+    <summary>{site.navigation.menuLabel}</summary>
+    <nav aria-label={site.navigation.mobileLabel}>
+      {site.navigation.items.map((item) => <a href={item.href}>{item.label}</a>)}
+      <Action action={site.shop.primaryAction} sectionId="top" />
+    </nav>
+  </details>
+</header>
+
+<section class="hero section-shell" id="top" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <h1 id="hero-title">{site.shop.title}</h1>
+    <p>{site.shop.introduction}</p>
+    <div class="hero-actions">
+      <Action class="button hero-action" action={site.shop.primaryAction} sectionId="top">
+        <Arrow />
+      </Action>
+      {
+        site.shop.secondaryAction && (
+          <Action class="hero-secondary" action={site.shop.secondaryAction} sectionId="top">
+            <Arrow />
+          </Action>
+        )
+      }
+    </div>
+  </div>
+  <figure class="hero-media placeholder-media">
+    <Image
+      src={site.shop.image.src}
+      alt={site.shop.image.alt}
+      widths={[360, 390, 480, 560, 640, 720, 768, 960, 1280, 1600]}
+      sizes="(max-width: 580px) calc(100vw - 2rem), (max-width: 900px) calc(100vw - 3rem), (max-width: 1520px) 52vw, 760px"
+      format="webp"
+      loading="eager"
+      fetchpriority="high"
+      decoding="sync"
+      quality={64}
+    />
+    <figcaption>{site.shop.image.caption}</figcaption>
+  </figure>
+  <dl class="hero-facts" aria-label={site.shop.factsLabel}>
+    {site.shop.facts.map((fact) => (
+      <div>
+        <dt>{fact.label}</dt>
+        <dd>{fact.value}</dd>
+      </div>
+    ))}
+  </dl>
+</section>

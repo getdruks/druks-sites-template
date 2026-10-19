@@ -1,0 +1,73 @@
+body[data-style="vital"] {
+  --primary: #17372f;
+  --surface: #f2f3e8;
+  --accent: #52692b;
+  --font-display: "Source Serif Local", Georgia, serif;
+  --font-body: "Manrope Local", Arial, sans-serif;
+}
+
+body[data-style="vital"] h1,
+body[data-style="vital"] h2,
+body[data-style="vital"] h3 {
+  letter-spacing: -0.035em;
+  line-height: 1.03;
+}
+
+body[data-style="vital"] h1 {
+  max-width: 12ch;
+  font-size: clamp(3.5rem, 7vw, 7rem);
+}
+
+body[data-style="vital"] .site-header {
+  border-bottom-color: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+body[data-style="vital"] .hero {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
+  gap: 3rem 7rem;
+  padding-block: 3rem 8rem;
+}
+
+body[data-style="vital"] .hero-media {
+  min-height: 44rem;
+  border-radius: 14rem 14rem 1.5rem 1.5rem;
+}
+
+body[data-style="vital"] .button,
+body[data-style="vital"] .credential-list li,
+body[data-style="vital"] .location-media {
+  border-radius: 0.75rem;
+}
+
+body[data-style="vital"] .section {
+  padding-block: clamp(6.5rem, 11vw, 12rem);
+  border-top-color: color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+body[data-style="vital"] .credentials {
+  grid-template-columns: minmax(12rem, 0.48fr) minmax(0, 1fr);
+}
+
+body[data-style="vital"] .credential-list {
+  gap: 1rem;
+  background: transparent;
+}
+
+body[data-style="vital"] .credential-list li {
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+}
+
+body[data-style="vital"] .gallery-grid {
+  grid-template-columns: 1fr 1.25fr 0.85fr;
+  gap: 1rem;
+}
+
+body[data-style="vital"] .gallery-grid figure,
+body[data-style="vital"] .gallery-grid img {
+  border-radius: 1.25rem;
+}
+
+body[data-style="vital"] .about-fact {
+  border-top-color: var(--accent);
+  border-radius: 0 0 0 1rem;
+}

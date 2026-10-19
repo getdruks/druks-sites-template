@@ -1,0 +1,15 @@
+---
+import { validateAction, type Action } from "../content/actions";
+
+interface Props {
+  action: Action;
+  sectionId: string;
+  destinationRequired?: boolean;
+  class?: string;
+}
+
+const { action, sectionId, destinationRequired = false, class: className } = Astro.props;
+validateAction(action, sectionId, Astro.url, destinationRequired);
+---
+
+<a class={className} href={action.href}>{action.label}<slot /></a>

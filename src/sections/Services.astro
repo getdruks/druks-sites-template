@@ -1,0 +1,19 @@
+---
+import { site } from "../content/site";
+---
+
+<section class="section section-shell services" id="services" aria-labelledby="services-title">
+  <div class="section-heading">
+    <h2 id="services-title">{site.services.title}</h2>
+    <p>{site.services.introduction}</p>
+  </div>
+  <ol class="service-list">
+    {site.services.items.map((service) => (
+      <li>
+        <span class="service-marker" aria-hidden="true"></span>
+        <h3>{service.name}</h3>
+        <p>{service.description}</p>
+      </li>
+    ))}
+  </ol>
+</section>

@@ -1,0 +1,47 @@
+---
+import "../../styles/clear.css";
+import "../../styles/editorial.css";
+import "../../styles/elegant.css";
+import "../../styles/sharp.css";
+import "../../styles/vital.css";
+import "../../styles/warm.css";
+import "../styles/global.css";
+import "../styles/site.css";
+
+import barlowDisplay from "../../assets/fonts/barlow-condensed-700.woff2?url";
+import cormorantDisplay from "../../assets/fonts/cormorant-garamond-regular.woff2?url";
+import manropeFont from "../../assets/fonts/manrope-variable.woff2?url";
+import sourceSerifDisplay from "../../assets/fonts/source-serif-4-500.woff2?url";
+import { defaultStyle, getStyleName } from "../config";
+import { site } from "../content/site";
+
+const styleName = getStyleName(import.meta.env.STYLE_PRESET ?? defaultStyle);
+const displayFonts = {
+  clear: manropeFont,
+  editorial: sourceSerifDisplay,
+  elegant: cormorantDisplay,
+  sharp: barlowDisplay,
+  vital: sourceSerifDisplay,
+  warm: sourceSerifDisplay,
+};
+const fontPreloads = [...new Set([manropeFont, displayFonts[styleName]])];
+---
+
+<!doctype html>
+<html lang={site.meta.language}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={site.meta.description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {fontPreloads.map((href) => (
+      <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />
+    ))}
+    <title>{site.meta.title}</title>
+  </head>
+  <body data-style={styleName}>
+    <a class="skip-link" href="#main">{site.meta.skipLinkLabel}</a>
+    <slot />
+  </body>
+</html>

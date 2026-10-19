@@ -1,0 +1,71 @@
+body[data-style="elegant"] {
+  --primary: #1d1713;
+  --surface: #f8f3ea;
+  --accent: #8d6240;
+  --font-display: "Cormorant Local", Georgia, serif;
+  --font-body: "Manrope Local", Arial, sans-serif;
+}
+
+body[data-style="elegant"] h1,
+body[data-style="elegant"] h2 {
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+body[data-style="elegant"] h1 {
+  max-width: 11ch;
+  font-size: clamp(4rem, 8vw, 8rem);
+  line-height: 0.86;
+}
+
+body[data-style="elegant"] h2 {
+  font-size: clamp(3.2rem, 6vw, 6.5rem);
+}
+
+body[data-style="elegant"] .site-header {
+  min-height: 6rem;
+}
+
+body[data-style="elegant"] .brand,
+body[data-style="elegant"] .desktop-nav,
+body[data-style="elegant"] .button {
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+body[data-style="elegant"] .hero {
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: 3rem 6rem;
+  min-height: calc(100svh - 6rem);
+  padding-block: 2.5rem 8rem;
+}
+
+body[data-style="elegant"] .hero-media {
+  min-height: 46rem;
+}
+
+body[data-style="elegant"] .section {
+  padding-block: clamp(7rem, 12vw, 13rem);
+}
+
+body[data-style="elegant"] .button {
+  padding-inline: 1.4rem;
+  background: transparent;
+  color: var(--primary);
+}
+
+body[data-style="elegant"] .booking .button {
+  border-color: var(--surface);
+  color: var(--surface);
+}
+
+body[data-style="elegant"] .gallery-grid {
+  grid-template-columns: 0.8fr 1.45fr 0.75fr;
+  grid-template-rows: 31rem 20rem;
+  gap: 1.25rem;
+}
+
+body[data-style="elegant"] .testimonial-list blockquote {
+  font-style: italic;
+  font-size: clamp(2rem, 4vw, 4.2rem);
+}

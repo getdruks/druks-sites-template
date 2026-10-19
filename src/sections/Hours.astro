@@ -1,0 +1,18 @@
+---
+import { site } from "../content/site";
+---
+
+<section class="section section-shell hours" id="hours" aria-labelledby="hours-title">
+  <div class="section-heading">
+    <h2 id="hours-title">{site.hours.title}</h2>
+    <p>{site.hours.introduction}</p>
+  </div>
+  <dl class="hours-list">
+    {site.hours.items.map((item) => (
+      <div>
+        <dt>{item.day}</dt>
+        <dd>{item.value}</dd>
+      </div>
+    ))}
+  </dl>
+</section>

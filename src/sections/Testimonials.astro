@@ -1,0 +1,18 @@
+---
+import { site } from "../content/site";
+---
+
+<section class="section section-shell testimonials" id="testimonials" aria-labelledby="testimonials-title">
+  <div class="section-heading">
+    <h2 id="testimonials-title">{site.testimonials.title}</h2>
+    <p>{site.testimonials.introduction}</p>
+  </div>
+  <div class="testimonial-list">
+    {site.testimonials.items.map((testimonial) => (
+      <figure>
+        <blockquote>“{testimonial.quote}”</blockquote>
+        <figcaption>{testimonial.source}</figcaption>
+      </figure>
+    ))}
+  </div>
+</section>

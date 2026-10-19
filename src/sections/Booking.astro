@@ -1,0 +1,16 @@
+---
+import Action from "../components/Action.astro";
+import Arrow from "../components/Arrow.astro";
+import { site } from "../content/site";
+---
+
+<section class="section section-shell booking" id="booking" aria-labelledby="booking-title">
+  <div>
+    <h2 id="booking-title">{site.booking.title}</h2>
+    <p>{site.booking.introduction}</p>
+  </div>
+  <Action class="button" action={site.booking.action} sectionId="booking" destinationRequired>
+    <Arrow />
+  </Action>
+  <p class="booking-note">{site.booking.note}</p>
+</section>

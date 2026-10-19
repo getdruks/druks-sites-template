@@ -1,0 +1,18 @@
+---
+import { site } from "../content/site";
+---
+
+<section class="section section-shell faq" id="faq" aria-labelledby="faq-title">
+  <div class="section-heading">
+    <h2 id="faq-title">{site.faq.title}</h2>
+    <p>{site.faq.introduction}</p>
+  </div>
+  <div class="faq-list">
+    {site.faq.items.map((item, index) => (
+      <details open={index === 0}>
+        <summary>{item.question}</summary>
+        <p>{item.answer}</p>
+      </details>
+    ))}
+  </div>
+</section>
